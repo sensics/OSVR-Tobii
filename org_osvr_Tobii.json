@@ -1,0 +1,50 @@
+{
+  "deviceVendor": "Tobii",
+  "deviceName": "Tobii device detection",
+  "author": "Jeremy Bell <jeremy@sensics.com>",
+  "version": 1,
+  "lastModified": "2018-12-28",
+  "interfaces": {
+    "eyetracker": {
+      "count": 2,
+      "tracker": true,
+      "button": false,
+      "direction": true,
+      "location2D": true
+    },
+    "direction": {
+      "count": 2
+    },
+    "tracker": {
+      "count": 2,
+      "position": true,
+      "orientation": false,
+      "bounded": true
+    },
+    "location2D": {
+      "count": 2
+    }
+  },
+
+  "semantic": {
+    "left": "eyetracker/0",
+    "right": "eyetracker/1"
+  },
+  "semantic alternate/generated": {
+    "left": {
+        "$target": "eyetracker/0",
+        "gazeDirection": "direction/0",
+        "gazeOrigin": "tracker/0",
+        "gazeLocation": "location2D/0"
+    },
+    "right": {
+        "$target": "eyetracker/1",
+        "gazeDirection": "direction/1",
+        "gazeOrigin": "tracker/1",
+        "gazeLocation": "location2D/1"
+    }
+  },
+  "automaticAliases": {
+    "/me/eyes": "semantic/*"
+  }
+}
